@@ -11,7 +11,7 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
 from student_management_app.models import Subjects, SessionYearModel, Students, Attendance, AttendanceReport, \
-    LeaveReportStaff, Staffs, FeedBackStaffs, CustomUser, Courses, NotificationStaffs, StudentResult, OnlineClassRoom
+     Staffs, CustomUser, Courses, NotificationStaffs
 
 
 def staff_home(request):

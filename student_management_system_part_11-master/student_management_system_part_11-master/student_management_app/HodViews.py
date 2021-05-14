@@ -10,8 +10,7 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
 from student_management_app.forms import AddStudentForm, EditStudentForm
-from student_management_app.models import CustomUser, Staffs, Courses, Subjects, Students, SessionYearModel, \
-    FeedBackStudent, FeedBackStaffs, LeaveReportStudent, LeaveReportStaff, Attendance, AttendanceReport, \
+from student_management_app.models import CustomUser, Staffs, Courses, Subjects, Students, SessionYearModel, Attendance, AttendanceReport, \
     NotificationStudent, NotificationStaffs
 
 

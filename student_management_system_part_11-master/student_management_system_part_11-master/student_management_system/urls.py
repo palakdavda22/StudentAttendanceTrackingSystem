@@ -20,17 +20,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 
 from student_management_app import views, HodViews, StaffViews, StudentViews
-from student_management_app.EditResultVIewClass import EditResultViewClass
 from student_management_system import settings
 
 urlpatterns = [
-    path('demo',views.showDemoPage),
-    path('signup_admin',views.signup_admin,name="signup_admin"),
-    path('signup_student',views.signup_student,name="signup_student"),
-    path('signup_staff',views.signup_staff,name="signup_staff"),
-    path('do_admin_signup',views.do_admin_signup,name="do_admin_signup"),
-    path('do_staff_signup',views.do_staff_signup,name="do_staff_signup"),
-    path('do_signup_student',views.do_signup_student,name="do_signup_student"),
     path('admin/', admin.site.urls),
     path('accounts/',include('django.contrib.auth.urls')),
     path('',views.ShowLoginPage,name="show_login"),
@@ -101,7 +93,6 @@ urlpatterns = [
     path('staff_all_notification', StaffViews.staff_all_notification, name="staff_all_notification"),
     path('staff_add_result', StaffViews.staff_add_result, name="staff_add_result"),
     path('save_student_result', StaffViews.save_student_result, name="save_student_result"),
-    path('edit_student_result',EditResultViewClass.as_view(), name="edit_student_result"),
     path('fetch_result_student',StaffViews.fetch_result_student, name="fetch_result_student"),
     path('start_live_classroom',StaffViews.start_live_classroom, name="start_live_classroom"),
     path('start_live_classroom_process',StaffViews.start_live_classroom_process, name="start_live_classroom_process"),
@@ -110,17 +101,14 @@ urlpatterns = [
     path('student_home', StudentViews.student_home, name="student_home"),
     path('student_view_attendance', StudentViews.student_view_attendance, name="student_view_attendance"),
     path('student_view_attendance_post', StudentViews.student_view_attendance_post, name="student_view_attendance_post"),
-    path('student_apply_leave', StudentViews.student_apply_leave, name="student_apply_leave"),
-    path('student_apply_leave_save', StudentViews.student_apply_leave_save, name="student_apply_leave_save"),
-    path('student_feedback', StudentViews.student_feedback, name="student_feedback"),
-    path('student_feedback_save', StudentViews.student_feedback_save, name="student_feedback_save"),
+    path('student_mark_attendance_post', StudentViews.student_mark_attendance, name="student_view_attendance"),
+    
     path('student_profile', StudentViews.student_profile, name="student_profile"),
     path('student_profile_save', StudentViews.student_profile_save, name="student_profile_save"),
+    # -----
     path('student_fcmtoken_save', StudentViews.student_fcmtoken_save, name="student_fcmtoken_save"),
     path('firebase-messaging-sw.js',views.showFirebaseJS,name="show_firebase_js"),
+    # -----
     path('student_all_notification',StudentViews.student_all_notification,name="student_all_notification"),
-    path('student_view_result',StudentViews.student_view_result,name="student_view_result"),
-    path('join_class_room/<int:subject_id>/<int:session_year_id>',StudentViews.join_class_room,name="join_class_room"),
-    path('node_modules/canvas-designer/widget.html',StaffViews.returnHtmlWidget,name="returnHtmlWidget"),
-    path('testurl/',views.Testurl)
+    
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
