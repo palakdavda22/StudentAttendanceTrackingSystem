@@ -39,9 +39,9 @@
             </a>
           </li>
           <li class="nav-item">
-            {% url 'student_view_attendance' as student_view_attendance %}
-            {% url 'student_view_attendance_post' as student_view_attendance_post %}
-            <a href="{{ student_mark_attendance }}" class="nav-link {% if request.path == student_mark_attendance %} active {% endif %} {% if request.path == student_view_attendance_post %} active {% endif %}">
+            {% url 'student_mark_attendance' as student_mark_attendance %}
+            {% url 'student_mark_attendance_post' as student_mark_attendance_post %}
+            <a href="{{ student_mark_attendance }}" class="nav-link {% if request.path == student_mark_attendance %} active {% endif %} {% if request.path == student_mark_attendance_post %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Mark Attendance

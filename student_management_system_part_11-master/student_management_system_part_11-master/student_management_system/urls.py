@@ -101,12 +101,13 @@ urlpatterns = [
     path('student_home', StudentViews.student_home, name="student_home"),
     path('student_view_attendance', StudentViews.student_view_attendance, name="student_view_attendance"),
     path('student_view_attendance_post', StudentViews.student_view_attendance_post, name="student_view_attendance_post"),
-    path('student_mark_attendance_post', StudentViews.student_mark_attendance, name="student_view_attendance"),
-    
+    path('student_mark_attendance', StudentViews.student_mark_attendance, name="student_mark_attendance"),
+    path('student_mark_attendance_check_course', StudentViews.student_mark_attendance_check_course, name="student_mark_attendance_check_course"),
     path('student_profile', StudentViews.student_profile, name="student_profile"),
     path('student_profile_save', StudentViews.student_profile_save, name="student_profile_save"),
     # -----
     path('student_fcmtoken_save', StudentViews.student_fcmtoken_save, name="student_fcmtoken_save"),
+
     path('firebase-messaging-sw.js',views.showFirebaseJS,name="show_firebase_js"),
     # -----
     path('student_all_notification',StudentViews.student_all_notification,name="student_all_notification"),

@@ -51,13 +51,13 @@ Attendance Data
                     {% for attendance_report in attendance_reports %}
                        {% if attendance_report.status == True %}
                         <div class="col-lg-3 attendance_div_green">
-                            <b>Date : {{ attendance_report.attendance_id.attendance_date }}</b>
+                            <b>Date : {{ attendance_report.attendance_date }}</b>
                             <br>
                             <b>[ Status : Present ]</b>
                         </div>
                         {% else %}
                         <div class="col-lg-3 attendance_div_red">
-                            <b>Date : {{ attendance_report.attendance_id.attendance_date }}</b>
+                            <b>Date : {{ attendance_report.attendance_date }}</b>
                             <br>
                             <b>[ Status : Absent ]</b>
                         </div>
